@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -29,4 +30,7 @@
 body {
   color: #000; /* Schwarzer Text */
   background-color: #fff; /* Weißer Hintergrund */
+
+  font-family: 'Satoshi', sans-serif;
+  @apply select-none;
 }
