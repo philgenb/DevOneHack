@@ -3,9 +3,16 @@ import {motion} from "framer-motion";
 import AppearAnimator from "@/components/AppearAnimator";
 import Link from "next/link";
 
-export default function ProjectCard(
-    {title = "Beispielprojekt", description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
-        tags = ["Mobile", "Responsive"], classname = "", onClick, isSelected, imgSrc = "/app_showcase.png", animationDelay = 0.1, path = "/studyplannerweb"}) {
+export default function ProjectCard({
+        title = "Beispielprojekt",
+        description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
+        tags = ["Mobile", "Responsive"],
+        classname = "",
+        onClick, isSelected,
+        imgSrc = "/app_showcase.png",
+        animationDelay = 0.1,
+        path = "/studyplannerweb",
+}) {
 
     const appearVariant = {
         hidden: { opacity: 0,},
@@ -19,7 +26,7 @@ export default function ProjectCard(
                 animate={'visible'}
                 transition={{ duration: 0.3, delay: animationDelay}}
                 variants={appearVariant}
-                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} aspect-square p-2 max-w-[250px] rounded-3xl transition-all delay-50`}
+                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} hover:bg-cardSelected aspect-square p-2 max-w-[250px] rounded-3xl transition-all delay-50`}
                 onClick={onClick}
             >
                 <div className="flex w-full h-full overflow-hidden items-center justify-center">
