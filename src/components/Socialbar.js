@@ -1,32 +1,36 @@
-import {motion} from "framer-motion";
+import { DiscordIcon } from "@/assets/imageComponents/DiscordIcon";
+import { GithubIcon } from "@/assets/imageComponents/GithubIcon";
+import { LinkedinIcon } from "@/assets/imageComponents/LinkedinIcon";
 
 export default function SocialBar() {
     return (
         <div className="flex gap-14">
-            <motion.a
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{duration: 0.2, delay: 0.4}}
-                whileHover={{ scale: 1.1, transition: {delay: 0, duration: 0.05}}}
-                href="https://github.com/philgenb">
-                <img src="/linkedin.svg"  alt="LinkedIn"/>
-            </motion.a>
-            <motion.a
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{duration: 0.2, delay: 0.5}}
-                whileHover={{ scale: 1.1, transition: {delay: 0, duration: 0.05}}}
-                href="https://github.com/philgenb">
-                <img src="/github.svg" alt="github"/>
-            </motion.a>
-            <motion.a
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
-                transition={{duration: 0.2, delay: 0.6}}
-                whileHover={{ scale: 1.1, transition: {delay: 0, duration: 0.05}}}
-                href="https://discord.com/channels/164783530268819457">
-                <img src="/discord.svg" alt="discord"/>
-            </motion.a>
+            <a
+                href="https://www.linkedin.com/in/phil-gengenbach"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transform transition-transform duration-300 hover:scale-110"
+            >
+                <LinkedinIcon className="w-10 h-10" />
+            </a>
+
+            <a
+                href="https://github.com/philgenb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transform transition-transform duration-300 hover:scale-110"
+            >
+                <GithubIcon className="w-10 h-10" />
+            </a>
+
+            <a
+                href="https://discord.com/channels/164783530268819457"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block transform transition-transform duration-300 hover:scale-110"
+            >
+                <DiscordIcon className="w-10 h-10" />
+            </a>
         </div>
-    )
+    );
 }
