@@ -23,7 +23,6 @@ const RecentProjectPage = () => {
     const handleCardClick = (cardId) => {
         setSelectedCard(cardId);
         setActiveTags(tagList[cardId - 1]);
-        // console.log(activeTags);
         console.log(tagList[cardId - 1]);
     };
 
