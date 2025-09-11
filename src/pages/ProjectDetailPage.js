@@ -1,6 +1,7 @@
 
 'use client'
 import {motion} from "framer-motion";
+import TechnologyCard from "@/components/TechnologyCard";
 
 export default function ProjectDetailPage(
     {
@@ -9,7 +10,8 @@ export default function ProjectDetailPage(
         idea = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
         userexperience = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
         technology = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
-        imageSubtitle = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut."
+        imageSubtitle = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
+        technologies = []
     }) {
 
 
@@ -51,15 +53,17 @@ export default function ProjectDetailPage(
                 transition={{duration: 0.3, delay: 0}}
                 className="ml-3 w-0.5 bg-gray-400 rounded-lg"
             />
-
             <div className="flex flex-col gap-8">
                 <motion.div
                     initial={{opacity: 0,}}
                     animate={{opacity: 1,}}
                     transition={{duration: 0.4, delay: 0.1}}
-                    className="flex"
+                    className="flex justify-between items-center"
                 >
                     <h1 className="font-satoshi h-fit font-black text-zinc-800 text-4xl break-words w-[155px]">{title}</h1>
+                    <div className="flex gap-10">
+                        {technologies}
+                    </div>
                 </motion.div>
                 <motion.img
                     initial={{opacity: 0, x: "10%"}}

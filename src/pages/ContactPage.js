@@ -6,7 +6,7 @@ export default function ContactPage() {
     const router = useRouter();
 
     return (
-        <div className="flex flex-col px-20">
+        <div className="flex flex-col px-14 md:px-20 transition-all">
             <Navbar/>
             <div className="flex flex-col md:px-16 py-20 gap-9 transition-all">
                 <h1 className="text-4xl sm:text-5xl leading-tight sm:leading-snug font-satoshi font-black text-gray-950 whitespace-nowrap transition-all">Love to hear from you, <br/> Get in touch</h1>

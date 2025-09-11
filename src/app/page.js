@@ -11,17 +11,14 @@ export default function Home() {
           <Head>
               <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,900,700,500,301,701,300,501,401,901,400,2&display=swap" rel="stylesheet"/>
           </Head>
-          <main className="flex flex-col h-screen items-center px-16">
+          <main className="flex flex-col h-screen items-center">
               <Navbar/>
               <LandingPage/>
           </main>
-          <div className="flex flex-col px-16">
+          <div className="flex flex-col px-8 sm:px-16 transition-all">
               <RecentProjectPage2/>
-
           </div>
-          <div className="flex px-40">
-              <AboutMePage/>
-          </div>
+          <AboutMePage/>
       </>
 
   )

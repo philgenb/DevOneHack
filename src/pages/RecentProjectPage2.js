@@ -1,8 +1,9 @@
 'use client';
 import ProjectCard from "@/components/ProjectCard.js";
-import { useEffect, useState } from "react";
+import {useState} from "react";
 import ProjectTagSection from "@/components/ProjectTagSection";
 import { motion } from "framer-motion";
+import TechnologyCard from "@/components/TechnologyCard";
 
 const RecentProjectPage2 = () => {
     const titles = ["Studyplanner Web", "Plantit", "Studyplanner Mobile", "Portfolio"];
@@ -14,6 +15,13 @@ const RecentProjectPage2 = () => {
         ["Flutter", "Mobile App", "Firebase"],
         ["Flutter", "Mobile App", "Firebase"],
         ["NextJS", "Web", "React"]
+    ];
+
+    const technologyList = [
+        [<TechnologyCard imgPath="/html_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/react_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>, <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>],
+        [<TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>],
+        [<TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>],
+        [<TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>, <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>]
     ];
 
     const [selectedCard, setSelectedCard] = useState(3);
@@ -59,6 +67,7 @@ const RecentProjectPage2 = () => {
                             onClick={() => handleCardClick(index + 1)}
                             isSelected={selectedCard === index + 1}
                             path={paths[index]}
+                            technologies={technologyList[index]}
                         />
                     ))}
                 </div>
