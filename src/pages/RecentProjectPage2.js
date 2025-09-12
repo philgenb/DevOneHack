@@ -1,6 +1,6 @@
 'use client';
 import ProjectCard from "@/components/ProjectCard.js";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ProjectTagSection from "@/components/ProjectTagSection";
 import { motion } from "framer-motion";
 import TechnologyCard from "@/components/TechnologyCard";
@@ -9,7 +9,7 @@ const RecentProjectPage2 = () => {
     const titles = ["Studyplanner Web", "Plantit", "Studyplanner Mobile", "Portfolio"];
     const paths = ["studyplannerweb", "plantit", "studyplannermobile", "portfolio"];
     const descriptions = ["A studyplanner and progress tracker for students. The application is built with React and Firebase.", "A mobile application that helps you keep track of your plants. The application is built with Flutter and Firebase.", "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.", "This portfolio website. The website is built with NextJS and TailwindCSS."];
-    const tags = ["Flutter", "Firebase", "React", "NextJS"];
+    const tags = ["Flutter", "Firebase", "React", "NextJS", "Flask"];
     const tagList = [
         ["React", "Web", "TailwindCSS", "Firebase"],
         ["Flutter", "Mobile App", "Firebase"],
@@ -24,7 +24,10 @@ const RecentProjectPage2 = () => {
         [<TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>, <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>]
     ];
 
-    const [selectedCard, setSelectedCard] = useState(3);
+    const [selectedCard, setSelectedCard] = useState(() => {
+        const savedCard = sessionStorage.getItem("selectedCard");
+        return savedCard ? parseInt(savedCard) : 3;
+    });
     const [activeTags, setActiveTags] = useState(tagList[selectedCard - 1]);
 
     const appearVariant = {
@@ -34,8 +37,12 @@ const RecentProjectPage2 = () => {
 
     const handleCardClick = (cardId) => {
         setSelectedCard(cardId);
-        setActiveTags(tagList[cardId - 1]);
+        sessionStorage.setItem("selectedCard", cardId); // Store the clicked card directly
     };
+
+    useEffect(() => {
+        setActiveTags(tagList[selectedCard - 1]);
+    }, [selectedCard]);
 
     return (
         <div id="recentProjects" className="flex flex-col h-fit sm:h-screen md:px-8 py-28 transition-all">
