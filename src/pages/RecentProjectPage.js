@@ -37,6 +37,7 @@ const RecentProjectPage = () => {
     return (
         <div id={"recentProjects"} className="flex flex-col h-screen px-8">
             <div className="grid grid-rows-3 md:grid-cols-4 gap-6 transition-all">
+
                 <div className="flex justify-start items-end row-start-1 col-start-2 min-h-[250px]">
                     <div className="flex gap-4 transition-all">
                         <div className="w-0.5 h-32 rounded-sm  bg-sectionMarker"/>
