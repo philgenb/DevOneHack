@@ -39,7 +39,7 @@ const RecentProjectPage2 = () => {
 
     return (
         <div id="recentProjects" className="flex flex-col h-fit sm:h-screen md:px-8 py-28 transition-all">
-            <div className="flex flex-col gap-6 items-start sm:items-end xl:items-start transition-all max-w-fit">
+            <div className="flex flex-col gap-6 items-start mx-auto sm:items-end xl:items-start transition-all max-w-fit">
                 {/*<div className="flex flex-col sm:flex-row lg:pl-[25%] transition-all justify-end">*/}
                 {/*    <ProjectTagSection*/}
                 {/*        className="hidden sm:flex transition-all self-end"*/}
@@ -52,7 +52,7 @@ const RecentProjectPage2 = () => {
                     tags={tags}
                     activeTags={activeTags}
                 />
-                <div className="flex flex-col sm:flex-row gap-12 sm:gap-4 md:gap-6 xl:gap-14 transition-all w-auto justify-center">
+                <div className="flex flex-col sm:flex-row gap-12 sm:gap-4 md:gap-6 xl:gap-14 transition-all justify-center">
                     {tagList.map((tags, index) => (
                         <div className={`relative ${index === 1 ? 'flex' : ''}`}>
                             <ProjectCard
