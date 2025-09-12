@@ -41,10 +41,10 @@ export default function ProjectCard({
 
                     <div className="flex flex-col gap-2">
                         <AppearAnimator delay="0.3">
-                            <h2 className="font-satoshi text-xl font-black">{title}</h2>
+                            <h2 className="text-xl font-black">{title}</h2>
                         </AppearAnimator>
                         <AppearAnimator delay="0.4">
-                            <p className="font-satoshi text-medium font-medium text-projectDescription">{description}</p>
+                            <p className="text-medium font-medium text-projectDescription">{description}</p>
                         </AppearAnimator>
                     </div>
                     <AppearAnimator delay="0.5">
