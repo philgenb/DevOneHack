@@ -5,8 +5,8 @@ import {JavascriptIcon} from "@/assets/imageComponents/technologies/JavascriptIc
 import {ReactIcon} from "@/assets/imageComponents/technologies/ReactIcon";
 import {FlaskIcon} from "@/assets/imageComponents/technologies/FlaskIcon";
 import {MongodbIcon} from "@/assets/imageComponents/technologies/MongodbIcon";
-import {GitIcon} from "@/assets/imageComponents/technologies/GitIcon";
 import {DockerIcon} from "@/assets/imageComponents/technologies/DockerIcon";
+import Clockwise_Home from "@/assets/applications/Clockwise_Home.svg";
 
 export default function Clockwise() {
     return (
@@ -18,6 +18,8 @@ export default function Clockwise() {
             imageSubtitle="Effortless time tracking for research assistants, reducing administrative workload and streamlining employee management."
             technologies={[<TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>, <TechnologyCard iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>, <TechnologyCard iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>, <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>, <TechnologyCard iconComponent={<MongodbIcon/>} bgColor="#ECE1FF" description={"MongoDB (NoSQL)"}/>, <TechnologyCard iconComponent={<DockerIcon/>} bgColor="#DFE6FC" description={"Docker"}/>]}
             githubLink={"https://github.com/intuitive-robots/pse-ss24-timetrack"}
+            // imgComponent={<ClockwiseScreen/>}
+            imgPath={"/assets/applications/Clockwise_Home_small.png"}
         />
     )
 }
