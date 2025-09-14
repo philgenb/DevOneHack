@@ -9,6 +9,7 @@ export default function StudyPlannerMobile() {
         technology="Built with Flutter and integrated with Firebase, Studyplanner Mobile leverages the power of modern technology to provide real-time updates, secure data storage, and seamless synchronization across devices."
         imageSubtitle="Efficient Exam Planning at Your Fingertips: Experience seamless organization and progress tracking"
         technologies={[<TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>, <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>, <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>]}
+        imgPath={"/assets/applications/StudyPlanner_Mobile_Group.png"}
     />
 
 }

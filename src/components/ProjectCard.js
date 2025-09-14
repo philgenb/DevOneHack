@@ -26,7 +26,7 @@ export default function ProjectCard({
                 animate={'visible'}
                 transition={{ duration: 0.3, delay: animationDelay}}
                 variants={appearVariant}
-                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} hover:bg-cardSelected aspect-square p-2 max-w-[250px] rounded-3xl transition-all delay-50`}
+                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} hover:bg-cardSelected aspect-square p-2.5 max-w-[250px] rounded-3xl transition-all delay-50`}
                 onClick={onClick}
             >
                 <div className="flex w-full h-full overflow-hidden items-center justify-center">

@@ -17,18 +17,31 @@ const RecentProjectPage = () => {
                 <TechnologyCard imgPath="/react_icon.svg" bgColor="#FFE8EE"/>,
                 <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>,
                 <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>
-            ]
+            ],
+            imgSrc: "/assets/applications/Studyplanner_Webapp.png"
         },
+        // {
+        //     title: "Plantit",
+        //     path: "plantit",
+        //     description: "A mobile app that encourages daily good deeds, with a tree growing as you progress. Built with Flutter and Firebase.",
+        //     tags: ["Flutter", "Mobile App", "Firebase"],
+        //     technologies: [
+        //         <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
+        //         <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
+        //         <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
+        //     ]
+        // },
         {
-            title: "Plantit",
-            path: "plantit",
-            description: "A mobile application that helps you keep track of your plants. The application is built with Flutter and Firebase.",
+            title: "Studyplanner Mobile",
+            path: "studyplannermobile",
+            description: "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.",
             tags: ["Flutter", "Mobile App", "Firebase"],
             technologies: [
                 <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
                 <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
-            ]
+            ],
+            imgSrc: "/assets/applications/preview/StudyPlanner_Mobile_Group_Preview.png"
         },
 
         {
@@ -41,19 +54,9 @@ const RecentProjectPage = () => {
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
                 <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>,
                 <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>
-            ]
+            ],
+            imgSrc: "/assets/applications/preview/Clockwise_Preview.png"
         },
-        // {
-        //     title: "Studyplanner Mobile",
-        //     path: "studyplannermobile",
-        //     description: "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.",
-        //     tags: ["Flutter", "Mobile App", "Firebase"],
-        //     technologies: [
-        //         <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
-        //         <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
-        //         <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
-        //     ]
-        // },
         {
             title: "Portfolio",
             path: "portfolio",
@@ -64,7 +67,8 @@ const RecentProjectPage = () => {
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
                 <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>,
                 <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>
-            ]
+            ],
+            imgSrc: "/assets/applications/preview/Portfolio_Preview.png"
         }
     ];
 
@@ -119,6 +123,7 @@ const RecentProjectPage = () => {
                                 title={project.title}
                                 description={project.description}
                                 tags={project.tags}
+                                imgSrc={project.imgSrc}
                                 animationDelay={0.1 * (index + 1)}
                                 classname=""
                                 onClick={() => handleCardClick(index)}
