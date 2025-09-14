@@ -44,7 +44,7 @@ export default function ProjectCard({
                             <h2 className="text-xl font-black">{title}</h2>
                         </AppearAnimator>
                         <AppearAnimator delay="0.4">
-                            <p className="text-medium font-medium text-projectDescription">{description}</p>
+                            <p className="text-medium font-medium w-full text-projectDescription">{description}</p>
                         </AppearAnimator>
                     </div>
                     <AppearAnimator delay="0.5">
