@@ -30,17 +30,30 @@ const RecentProjectPage = () => {
                 <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
             ]
         },
+
         {
-            title: "Studyplanner Mobile",
-            path: "studyplannermobile",
-            description: "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.",
-            tags: ["Flutter", "Mobile App", "Firebase"],
+            title: "Clockwise",
+            path: "clockwise",
+            description: "Time-tracking web application built with React and Flask, designed to streamline work hour logging and vacation management for research assistants",
+            tags: ["React", "Flask", "MongoDB", "Python", "Typescript"],
             technologies: [
                 <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
-                <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
+                <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>,
+                <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#F3D8FE"/>
             ]
         },
+        // {
+        //     title: "Studyplanner Mobile",
+        //     path: "studyplannermobile",
+        //     description: "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.",
+        //     tags: ["Flutter", "Mobile App", "Firebase"],
+        //     technologies: [
+        //         <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
+        //         <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
+        //         <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
+        //     ]
+        // },
         {
             title: "Portfolio",
             path: "portfolio",
