@@ -57,7 +57,7 @@ export default function AboutMePage() {
                 <div className="flex gap-8">
                     <div className="w-0.5 h-32 rounded-sm  bg-sectionMarker"/>
                     <div className="flex flex-col gap-6">
-                        <p className="max-w-[400px] text-md md:text-lg font-medium text-projectDescription mt-12">
+                        <p className="w-[400px] text-md md:text-lg font-medium text-projectDescription mt-12">
                             I'm Phil Gengenbach, a dedicated Computer Science student at KIT in Karlsruhe.
                             I'm eager to contribute to meaningful projects. With a solid foundation in algorithms and software engineering,
                             I'm excited to apply my skills to real-world solutions

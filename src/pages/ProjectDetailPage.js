@@ -22,7 +22,7 @@ export default function ProjectDetailPage(
 
     return (
         <div className="flex flex-col">
-            <div className="flex flex-col-reverse md:flex-row px-8 md:px-12 xl:pl-16 2xl:px-36 py-20 gap-8 transition-all duration-75 relative">
+            <div className="flex flex-col-reverse md:flex-row px-8 md:px-12 xl:pl-16 2xl:px-36 py-20 2xl:py-32 gap-8 transition-all duration-75 relative">
                 <div className="flex flex-col gap-14 w-full md:w-[25rem] items-center  text-center md:text-right transition-all duration-500 ease-in-out">
                     <motion.div
                         className="flex flex-col gap-1 min-w-[350px] w-[400px]"
