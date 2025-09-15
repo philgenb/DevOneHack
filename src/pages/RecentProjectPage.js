@@ -76,16 +76,17 @@ const RecentProjectPage = () => {
         }
     ];
 
-    const [selectedCard, setSelectedCard] = useState(() => {
-        // Ensure sessionStorage is only accessed in the browser
+    const [selectedCard, setSelectedCard] = useState(0);
+    const [activeTags, setActiveTags] = useState(projects[0].tags);
+
+    useEffect(() => {
         if (typeof window !== 'undefined') {
             const savedCard = sessionStorage.getItem("selectedCard");
-            return savedCard ? parseInt(savedCard) : 0;
+            if (savedCard) {
+                setSelectedCard(parseInt(savedCard));
+            }
         }
-        return 0; // Default fallback for server-side rendering
-    });
-
-    const [activeTags, setActiveTags] = useState(projects[selectedCard].tags);
+    }, []);
 
     const appearVariant = {
         hidden: {opacity: 0, x: '-50%'},
