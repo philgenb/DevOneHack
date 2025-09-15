@@ -11,7 +11,8 @@ const RecentProjectPage = () => {
             title: "Studyplanner Web",
             path: "studyplannerweb",
             description: "A studyplanner and progress tracker for students. The application is built with React and Firebase.",
-            tags: ["React", "Web", "TailwindCSS", "Firebase"],
+            tags: ["Javascript", "TailwindCSS", "Firebase", "NoSQL"],
+            lowerTags: ["Web", "Responsive", "Firebase", "Firestore"],
             technologies: [
                 <TechnologyCard imgPath="/html_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/react_icon.svg" bgColor="#FFE8EE"/>,
@@ -35,7 +36,8 @@ const RecentProjectPage = () => {
             title: "Studyplanner Mobile",
             path: "studyplannermobile",
             description: "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.",
-            tags: ["Flutter", "Mobile App", "Firebase"],
+            tags: ["Flutter", "Dart", "Firebase", "NoSQL"],
+            lowerTags: ["Mobile", "Responsive", "Firebase", "Firestore"],
             technologies: [
                 <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
@@ -48,7 +50,8 @@ const RecentProjectPage = () => {
             title: "Clockwise",
             path: "clockwise",
             description: "Time-tracking web application built with React and Flask, designed to streamline work hour logging and vacation management for research assistants",
-            tags: ["React", "Flask", "MongoDB", "Python", "Typescript"],
+            tags: ["Python", "Typescript", "NoSQL", "API"],
+            lowerTags: ["Web", "React", "Flask", "GPL-3.0"],
             technologies: [
                 <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
@@ -60,8 +63,9 @@ const RecentProjectPage = () => {
         {
             title: "Portfolio",
             path: "portfolio",
-            description: "This portfolio website. The website is built with NextJS and TailwindCSS.",
-            tags: ["NextJS", "Web", "React"],
+            description: "This portfolio website. Built with NextJS, Javascript and TailwindCSS.",
+            tags: ["Javascript", "TailwindCSS", "CSS"],
+            lowerTags: ["Web", "Next.js", "React", "Responsive"],
             technologies: [
                 <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
                 <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
@@ -122,7 +126,7 @@ const RecentProjectPage = () => {
                             <ProjectCard
                                 title={project.title}
                                 description={project.description}
-                                tags={project.tags}
+                                tags={project.lowerTags}
                                 imgSrc={project.imgSrc}
                                 animationDelay={0.1 * (index + 1)}
                                 classname=""

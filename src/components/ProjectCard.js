@@ -63,7 +63,7 @@ function TagRow({tags = []}) {
         <div className="flex flex-row gap-3">
             {tags.map((tag, index) => {
                 return (
-                    <p key={index} className="font-satoshi text-sm font-bold text-projectTag">{tag}</p>
+                    <p key={index} className="text-sm font-bold text-projectTag">{tag}</p>
                 )
             })}
         </div>
