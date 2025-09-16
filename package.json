@@ -14,7 +14,7 @@
     "@nextui-org/react": "^2.1.13",
     "build": "^0.1.4",
     "framer-motion": "^10.16.4",
-    "next": "13.5.4",
+    "next": "^14.2.11",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.5.2",
