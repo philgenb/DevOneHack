@@ -13,7 +13,7 @@ const ProjectCarousel = ({
                              handleCardClick
                          }) => {
     const [projectsPerPage, setProjectsPerPage] = useState(4);
-
+    const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
         const updateProjectsPerPage = () => {
@@ -29,31 +29,59 @@ const ProjectCarousel = ({
         return () => window.removeEventListener("resize", updateProjectsPerPage);
     }, []);
 
-    useEffect(() => {
-        const startIdx = currentPage * projectsPerPage;
-        const endIdx = startIdx + projectsPerPage;
-
-        if (selectedCard < startIdx || selectedCard >= endIdx) {
-            setSelectedCard(endIdx - 1); // Autoselect last visible project
+    const getAdjustedIndices = (page) => {
+        let start = page * projectsPerPage;
+        let end = start + projectsPerPage;
+        if (end > projects.length) {
+            end = projects.length;
+            start = Math.max(0, end - projectsPerPage);
         }
-    }, [projectsPerPage, currentPage, selectedCard]);
+        return { start, end };
+    };
 
+    const { start: startIdx, end: endIdx } = getAdjustedIndices(currentPage);
+    const visibleProjects = projects.slice(startIdx, endIdx);
+
+    useEffect(() => {
+        const visibleCount = endIdx - startIdx;
+
+        // Special case: if exactly 4 projects shown, select the third (index 2)
+        if (projects.length === 4 && projectsPerPage === 4) {
+            setSelectedCard(2);
+            return;
+        }
+
+        // Otherwise, select the last visible card if out of range
+        if (selectedCard < startIdx || selectedCard >= endIdx) {
+            setSelectedCard(endIdx - 1);
+        }
+    }, [projectsPerPage, currentPage, selectedCard, startIdx, endIdx, projects.length, setSelectedCard]);
 
     const maxPage = Math.ceil(projects.length / projectsPerPage) - 1;
-    const startIdx = currentPage * projectsPerPage;
-    const visibleProjects = projects.slice(startIdx, startIdx + projectsPerPage);
 
     const handlePrev = () => {
-        const newPage = Math.max(currentPage - 1, 0);
-        setCurrentPage(newPage);
-        setSelectedCard(newPage * projectsPerPage); // Autoselect erstes sichtbares Projekt
+        if (currentPage === 0) return;
+
+        setIsAnimating(true);
+        setTimeout(() => {
+            const newPage = Math.max(currentPage - 1, 0);
+            setCurrentPage(newPage);
+            setIsAnimating(false);
+        }, 300);
     };
 
     const handleNext = () => {
-        const newPage = Math.min(currentPage + 1, maxPage);
-        setCurrentPage(newPage);
-        setSelectedCard(newPage * projectsPerPage); // Autoselect erstes sichtbares Projekt
+        const nextPageStart = (currentPage + 1) * projectsPerPage;
+        if (nextPageStart >= projects.length) return;
+
+        setIsAnimating(true);
+        setTimeout(() => {
+            const newPage = currentPage + 1;
+            setCurrentPage(newPage);
+            setIsAnimating(false);
+        }, 300);
     };
+
 
     return (
         <div className="flex w-full items-start justify-center gap-4 md:gap-8 min-h-[28rem]">
@@ -70,7 +98,11 @@ const ProjectCarousel = ({
             </div>
 
             {/* Project Cards */}
-            <div className="flex justify-center items-start gap-6 sm:gap-4 md:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-16 flex-1 transition-all">
+            <div
+                className={`flex justify-center items-start gap-6 sm:gap-4 md:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-16 flex-1 transition-all duration-350 ease-in-out transform ${
+                    isAnimating ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
+                }`}
+            >
                 {visibleProjects.map((project, index) => {
                     const realIndex = startIdx + index;
                     return (
@@ -98,7 +130,7 @@ const ProjectCarousel = ({
                 <button
                     type="button"
                     onClick={handleNext}
-                    disabled={currentPage === maxPage}
+                    disabled={currentPage === maxPage || projects.length <= projectsPerPage}
                     className="p-3 bg-white shadow-xl rounded-xl hover:scale-110 transition disabled:opacity-30 disabled:cursor-not-allowed"
                 >
                     <ProjectRightIcon />

@@ -60,7 +60,7 @@ export default function AboutMePage() {
                         <p className="w-[400px] text-md md:text-lg font-medium text-projectDescription mt-12">
                             I'm Phil Gengenbach, a dedicated Computer Science student at KIT in Karlsruhe.
                             I'm eager to contribute to meaningful projects. With a solid foundation in algorithms and software engineering,
-                            I'm excited to apply my skills to real-world solutions
+                            I'm excited to apply my skills to real-world solutions.
                         </p>
                         <Link href={"/contact"}>
                             <Button endContent={<img src="/arrow_right.svg" color="white"/>} color='secondary' className="px-8 py-6 w-[200px] max-w-1/2 text-white font-black text-md hover:bg-buttonHover">
@@ -79,20 +79,20 @@ export default function AboutMePage() {
                 </div>
 
                 <div className="flex flex-col gap-8 px-6 py-6 rounded-xl shadow border-2 border-white"> {/*p-4 rounded-xl shadow border-2 border-white*/}
-                    <div className="flex justify-between">
-                        <div className="flex items-center gap-2">
-                            <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full"/>
-                            <p className="text-lg text-neutral-500 font-bold">Student</p>
-                        </div>
-                        <div className="flex items-center gap-1 px-4 py-1 bg-emerald-100 rounded-3xl">
-                            <div className="w-1.5 h-1.5 bg-green-400 rounded-full"/>
-                            <p className="font-bold text-green-400">Available for Work</p>
-                        </div>
-                    </div>
+                    {/*<div className="flex justify-between">*/}
+                    {/*    <div className="flex items-center gap-2">*/}
+                    {/*        <div className="w-1.5 h-1.5 bg-neutral-400 rounded-full"/>*/}
+                    {/*        <p className="text-lg text-neutral-500 font-bold">Computer Science Student</p>*/}
+                    {/*    </div>*/}
+                    {/*    /!*<div className="flex items-center gap-1 px-4 py-1 bg-emerald-100 rounded-3xl">*!/*/}
+                    {/*    /!*    <div className="w-1.5 h-1.5 bg-green-400 rounded-full"/>*!/*/}
+                    {/*    /!*    <p className="font-bold text-green-400">Available for Work</p>*!/*/}
+                    {/*    /!*</div>*!/*/}
+                    {/*</div>*/}
 
                     <div className="flex flex-col gap-2">
                         <h1 className="text-3xl font-black">I'm Phil Gengenbach</h1>
-                        <p className="text-zinc-500 font-medium">A dedicated Computer Science student at KIT in Karlsruhe. I'm eager to contribute to meaningful projects. With a solid foundation in algorithms and software engineering, I'm excited to apply my skills to real-world solutions</p>
+                        <p className="text-zinc-500 font-medium">A dedicated Computer Science student at KIT in Karlsruhe. I'm eager to contribute to meaningful projects. With a solid foundation in algorithms and software engineering, I'm excited to apply my skills to real-world solutions.</p>
                     </div>
                     <div className="flex gap-8">
                         <Link href={"/contact"}>

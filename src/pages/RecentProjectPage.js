@@ -136,7 +136,7 @@ const RecentProjectPage = () => {
     };
 
     return (
-        <div id="recentProjects" className="flex flex-col h-fit sm:h-screen w-full px-0 md:px-8 py-28 transition-all">
+        <div id="recentProjects" className="flex flex-col h-fit sm:h-screen w-full px-6 md:px-8 py-28 transition-all">
             <div className="flex flex-col gap-6 items-start w-full sm:items-end xl:items-start transition-all">
 
             <ProjectTagSection
