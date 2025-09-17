@@ -25,6 +25,20 @@ const RecentProjectPage = () => {
             imgSrc: "/assets/applications/preview/StudyPlanner_Mobile_Group_Preview.png"
         },
         {
+            title: "Farewise",
+            path: "farewise",
+            description:
+                "Serverless flight search & comparison platform. React + FastAPI on AWS with DynamoDB and custom scoring for category-based results.",
+            tags: ["AWS", "Python", "TypeScript", "DynamoDB", "API"],
+            lowerTags: ["Web", "Cloud", "React", "FastAPI"],
+            technologies: [
+                <TechnologyCard imgPath="/react_icon.svg" bgColor="#FFE8EE"/>,
+                <TechnologyCard imgPath="/javascript_icon.svg" bgColor="#DFE6FC"/>,  // swap to /typescript_icon.svg if available
+                <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
+            ],
+            imgSrc: "/assets/applications/Farewise_Showcase.png"
+        },
+        {
             title: "VisitorInsights",
             path: "visitorinsights",
             description: "Accessible Web application to visualize predictive visitor information. Built with React and Flask.",
@@ -139,7 +153,7 @@ const RecentProjectPage = () => {
         <div id="recentProjects" className="flex flex-col h-fit sm:h-screen w-full px-6 md:px-8 py-28 transition-all">
             <div className="flex flex-col gap-6 items-start w-full sm:items-end xl:items-start transition-all">
 
-            <ProjectTagSection
+                <ProjectTagSection
                     className="hidden sm:flex transition-all self-end"
                     tags={activeTags}
                     activeTags={activeTags}

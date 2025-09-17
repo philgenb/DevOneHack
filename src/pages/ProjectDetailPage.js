@@ -1,4 +1,3 @@
-
 'use client'
 import {motion} from "framer-motion";
 import {GithubIcon} from "@/assets/imageComponents/GithubIcon";
@@ -15,7 +14,9 @@ export default function ProjectDetailPage(
         technology = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.",
         imageSubtitle = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.",
         technologies = [],
-        githubLink
+        githubLink,
+        websiteLink,
+        websiteIcon,
     }) {
 
     const technologyCount = technologies.length;
@@ -23,8 +24,10 @@ export default function ProjectDetailPage(
 
     return (
         <div className="flex flex-col">
-            <div className="flex flex-col-reverse md:flex-row px-8 md:px-12 xl:pl-16 2xl:px-36 py-20 2xl:py-32 gap-8 transition-all duration-75 relative">
-                <div className="flex flex-col gap-14 w-full md:w-[25rem] items-center  text-center md:text-right transition-all duration-500 ease-in-out">
+            <div
+                className="flex flex-col-reverse md:flex-row px-8 md:px-12 xl:pl-16 2xl:px-36 py-20 2xl:py-32 gap-8 transition-all duration-75 relative">
+                <div
+                    className="flex flex-col gap-14 w-full md:w-[25rem] items-center  text-center md:text-right transition-all duration-500 ease-in-out">
                     <motion.div
                         className="flex flex-col gap-1 min-w-[350px] w-[400px]"
                         initial={{opacity: 0, x: "-10%"}}
@@ -54,7 +57,8 @@ export default function ProjectDetailPage(
                     </motion.div>
                 </div>
                 {/*For Small Screen Size*/}
-                <div className={`flex my-16 justify-start sm:justify-center md:hidden gap-8 overflow-x-auto overflow-y-hidden`}>
+                <div
+                    className={`flex my-16 justify-start sm:justify-center md:hidden gap-8 overflow-x-auto overflow-y-hidden`}>
                     {technologies}
                 </div>
                 <div className="flex flex-col gap-8">
@@ -100,16 +104,40 @@ export default function ProjectDetailPage(
                     </motion.p>
                 </div>
 
-                {/* GitHub-Link am rechten unteren Rand */}
-                {githubLink && (
-                    <a
-                        href={githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute top-12 right-10 transform transition-transform duration-300 hover:scale-110"
-                    >
-                        <GithubIcon/>
-                    </a>
+                {/* Container for GitHub- and Website-Link */}
+                {(githubLink || websiteLink) && (
+                    <div className="absolute top-12 right-10 flex items-center gap-4">
+                        {githubLink && (
+                            <a
+                                href={githubLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transform transition-transform duration-300 hover:scale-110 focus:scale-110 outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 rounded-full"
+                                title="View on GitHub"
+                                aria-label="Open GitHub repository"
+                            >
+                                <GithubIcon/>
+                            </a>
+                        )}
+
+                        {websiteLink && (
+                            <a
+                                href={websiteLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="transform transition-transform duration-300 hover:scale-110 focus:scale-110 outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 rounded-full"
+                                title="Open website"
+                                aria-label="Open website"
+                            >
+                                {/* Fallback: text link if no icon is provided */}
+                                {websiteIcon ?? (
+                                    <span className="px-2 py-1 text-sm font-medium underline text-blue-600">
+                    Website
+                  </span>
+                                )}
+                            </a>
+                        )}
+                    </div>
                 )}
 
                 <div className="absolute left-[5%] top-[5%] hidden xl:flex">
