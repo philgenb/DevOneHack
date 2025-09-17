@@ -66,17 +66,17 @@ const RecentProjectPage = () => {
             ],
             imgSrc: "/assets/applications/preview/Portfolio_Preview.png"
         },
-        {
-            title: "Plantit",
-            path: "plantit",
-            description: "A mobile app that encourages daily good deeds, with a tree growing as you progress. Built with Flutter and Firebase.",
-            tags: ["Flutter", "Mobile App", "Firebase"],
-            technologies: [
-                <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
-                <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
-                <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
-            ]
-        },
+        // {
+        //     title: "Plantit",
+        //     path: "plantit",
+        //     description: "A mobile app that encourages daily good deeds, with a tree growing as you progress. Built with Flutter and Firebase.",
+        //     tags: ["Flutter", "Mobile App", "Firebase"],
+        //     technologies: [
+        //         <TechnologyCard imgPath="/dart_icon.svg" bgColor="#DFE6FC"/>,
+        //         <TechnologyCard imgPath="/flutter_icon.svg" bgColor="#FFE8EE"/>,
+        //         <TechnologyCard imgPath="/branch_icon.svg" bgColor="#F3D8FE"/>
+        //     ]
+        // },
         {
             title: "Studyplanner Web",
             path: "studyplannerweb",
