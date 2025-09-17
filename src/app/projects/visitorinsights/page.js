@@ -11,7 +11,7 @@ export default function VisitorInsights() {
             idea="VisitorInsights is a web application developed as part of my bachelor's thesis to support inclusive museum visits through predictive visitor information. It uses interpretable machine learning models to forecast daily crowd levels and presents results in an accessible, transparent way."
             userexperience="The UI is designed for accessibility, featuring SHAP-based model explanations and visual/textual representations of uncertainty. It supports screen readers, keyboard navigation, and includes a high-contrast mode."
             technology="Built with Flask and React in a modular MVCS architecture, VisitorInsights uses decision-based models like Random Forest and XGBoost, achieving 85% classification accuracy for daily predictions. The interface follows WCAG standards for a barrier-free web experience."
-            imageSubtitle="Predictive accessibility – powered by Flask, React & SHAP."
+            imageSubtitle="Making predictive visitor information accessible – powered by Flask, React, XGBoost, and SHAP."
             technologies={[
                 <TechnologyCard iconComponent={<ReactIcon />} bgColor="#FFE8EE" description={"React"} />,
                 <TechnologyCard iconComponent={<FlaskIcon />} bgColor="#DFE6FC" description={"Flask"} />,
