@@ -40,13 +40,13 @@ const LandingPage = () => {
                 <LeftArtworkIcon/>
             </motion.div>
             <motion.div
-                variants={leftVariant}
+                variants={downVariant}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.3, delay: 0.1 }}
-                className="absolute top-[-3rem] left-[-5rem] z-10 hidden md:block"
+                transition={{ duration: 0.2, delay: 0.1 }}
+                className="absolute top-[-10rem] z-10"
             >
-                <CodeSnippetIcon/>
+                <CodeSnippetIcon />
             </motion.div>
             <motion.div
                 variants={rightVariant}

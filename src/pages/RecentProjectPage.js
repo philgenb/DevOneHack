@@ -23,8 +23,16 @@ const RecentProjectPage = () => {
     const handleCardClick = (cardId) => {
         setSelectedCard(cardId);
         setActiveTags(tagList[cardId - 1]);
-        console.log(tagList[cardId - 1]);
+        sessionStorage.setItem('selectedCard', cardId);
     };
+
+    useEffect(() => {
+        const savedSelectedCard = sessionStorage.getItem('selectedCard');
+        if (savedSelectedCard) {
+            setSelectedCard(Number(savedSelectedCard));
+            setActiveTags(tagList[Number(savedSelectedCard) - 1]);
+        }
+    }, []);
 
     return (
         <div id={"recentProjects"} className="flex flex-col h-screen px-8">
