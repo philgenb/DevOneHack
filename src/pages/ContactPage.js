@@ -1,24 +1,45 @@
+"use client";
 import {Input, Button, Textarea} from "@nextui-org/react";
 import {useRouter} from "next/navigation";
-
+import {useState} from "react";
+import {MessageIcon} from "@/assets/imageComponents/MessageIcon";
 
 export default function ContactPage() {
     const router = useRouter();
+
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const handleSendEmail = () => {
+        const recipient = "phil.gengenbach@online.de"; // <-- Target Mail Address
+        const subject = encodeURIComponent("Contact from " + name);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+        // Navigate away after short delay
+        setTimeout(() => {
+            router.push("/"); // or window.close() if it's a popup
+        }, 1000); // Wait for mail client to open
+    };
 
     return (
         <div className="flex flex-col px-14 md:px-20 transition-all">
             <Navbar/>
             <div className="flex flex-col md:px-16 py-20 gap-9 transition-all">
-                <h1 className="text-4xl sm:text-5xl leading-tight sm:leading-snug font-satoshi font-black text-gray-950 whitespace-nowrap transition-all">Love to hear from you, <br/> Get in touch</h1>
+                <h1 className="text-4xl sm:text-5xl leading-tight sm:leading-snug font-satoshi font-black text-gray-950 whitespace-nowrap transition-all">
+                    Love to hear from you, <br/> Get in touch
+                </h1>
                 <div className="flex flex-col gap-8 w-3/4 min-w-fit">
                     <div className="flex gap-8">
                         <Input
                             labelPlacement="outside"
-                            isRequired={true}
-                            type="email"
+                            isRequired
+                            type="text"
                             label="Your Name"
                             placeholder="Max Mustermann"
-                            height={"50px"}
+                            value={name}
+                            onValueChange={setName}
                             className="font-satoshi max-w-[350px]"
                             classNames={{
                                 label: "font-satoshi font-bold text-lg text-gray-950",
@@ -28,10 +49,12 @@ export default function ContactPage() {
                         />
                         <Input
                             labelPlacement="outside"
-                            isRequired={true}
+                            isRequired
                             type="email"
                             label="Your email"
                             placeholder="max.mustermann@gmail.com"
+                            value={email}
+                            onValueChange={setEmail}
                             className="font-satoshi max-w-[350px]"
                             classNames={{
                                 label: "font-satoshi font-bold text-lg text-gray-950",
@@ -42,10 +65,11 @@ export default function ContactPage() {
                     </div>
                     <Textarea
                         labelPlacement="outside"
-                        isRequired={true}
-                        type=""
+                        isRequired
                         label="Message"
                         placeholder="Let me know about your request."
+                        value={message}
+                        onValueChange={setMessage}
                         className="font-satoshi"
                         classNames={{
                             label: "font-satoshi font-bold text-lg text-gray-950",
@@ -55,19 +79,31 @@ export default function ContactPage() {
                     />
                 </div>
                 <div className="flex gap-8">
-                    <Button endContent={<img src="/message_icon.svg" color="white"/>} color='secondary' onClick={() => router.push("/")} className="px-8 gap-4 py-6 w-[200px] max-w-1/2 text-white font-black font-satoshi text-md hover:bg-buttonHover">
+                    <Button
+                        // endContent={}
+                        color='secondary'
+                        onClick={handleSendEmail}
+                        className="px-5 gap-4 py-6 w-[200px] max-w-1/2 text-white font-black font-satoshi text-md hover:bg-buttonHover"
+                    >
                         Send Message
+                        <MessageIcon className="w-[200px] h-10" />
                     </Button>
-                    <Button className="px-10 gap-4 py-6 max-w-1/2 text-black font-black font-satoshi text-md hover:bg-gray-100 bg-gray-300" onClick={() => router.push("/")}>Cancel</Button>
+                    <Button
+                        className="px-10 gap-4 py-6 max-w-1/2 text-black font-black font-satoshi text-md hover:bg-gray-100 bg-gray-300"
+                        onClick={() => router.push("/")}
+                    >
+                        Cancel
+                    </Button>
                 </div>
-
             </div>
         </div>
-    )
+    );
 }
 
 function Navbar() {
-    return <div className="flex items-center py-8 font-satoshi font-black">
-        <h1>Phil Gengenbach</h1>
-    </div>
+    return (
+        <div className="flex items-center py-8 font-satoshi font-black">
+            <h1>Phil Gengenbach</h1>
+        </div>
+    );
 }
