@@ -1,6 +1,7 @@
 'use client';
 import {motion} from "framer-motion";
 import AppearAnimator from "@/components/AppearAnimator";
+import Link from "next/link";
 
 export default function ProjectCard(
     {title = "Beispielprojekt", description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.",
@@ -18,7 +19,7 @@ export default function ProjectCard(
                 animate={'visible'}
                 transition={{ duration: 0.3, delay: animationDelay}}
                 variants={appearVariant}
-                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} aspect-square p-2 rounded-3xl transition-all delay-50`}
+                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} aspect-square p-2 max-w-[250px] rounded-3xl transition-all delay-50`}
                 onClick={onClick}
             >
                 <div className="flex w-full h-full overflow-hidden items-center justify-center">
@@ -26,7 +27,7 @@ export default function ProjectCard(
                 </div>
             </motion.div>
             {isSelected ?
-                <div className="flex flex-col gap-5 items-start justify-center">
+                <div className="flex flex-col gap-5 items-start justify-start max-w-[250px]">
                     <AppearAnimator delay="0.2">
                         <TagRow tags={tags}/>
                     </AppearAnimator>
@@ -40,7 +41,9 @@ export default function ProjectCard(
                         </AppearAnimator>
                     </div>
                     <AppearAnimator delay="0.5">
-                        <button className="font-satoshi text-sm text-gray-900 font-black underline">Explore</button>
+                        <Link href={`/projects/${path}`}>
+                            <button className="font-satoshi text-sm text-gray-900 font-black underline">Explore</button>
+                        </Link>
                     </AppearAnimator>
                 </div> : null
             }
