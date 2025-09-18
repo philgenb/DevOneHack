@@ -20,7 +20,7 @@ export default function ProjectCard({
     };
 
     return (
-        <div className={`flex flex-col gap-6 ${classname}`}>
+        <div className={`flex flex-col shrink-1 gap-6 ${classname}`}>
             <motion.div
                 initial={'hidden'}
                 animate={'visible'}
@@ -63,7 +63,7 @@ function TagRow({tags = []}) {
         <div className="flex flex-row gap-3">
             {tags.map((tag, index) => {
                 return (
-                    <p key={index} className="text-sm font-bold text-projectTag">{tag}</p>
+                    <p key={index} className="text-sm font-bold text-projectTag whitespace-nowrap">{tag}</p>
                 )
             })}
         </div>
