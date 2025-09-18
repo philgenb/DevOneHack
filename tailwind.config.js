@@ -42,7 +42,10 @@ module.exports = {
     themes: {
       light: {
         layout: {}, // light theme layout tokens
-        colors: {secondary: '#B348D9'}, // light theme colors
+        colors: {
+          secondary: '#B348D9',
+          dark: '#1D1D1D', // light theme colors
+        }, // light theme colors
       },
       dark: {
         layout: {}, // dark theme layout tokens
