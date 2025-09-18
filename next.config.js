@@ -5,7 +5,7 @@ const nextConfig = {
   // Disable image optimization for static export
   images: { unoptimized: true },
 
-  // Optional: trailingSlash: true,
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
