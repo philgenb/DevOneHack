@@ -77,8 +77,12 @@ const RecentProjectPage = () => {
     ];
 
     const [selectedCard, setSelectedCard] = useState(() => {
-        const savedCard = sessionStorage.getItem("selectedCard");
-        return savedCard ? parseInt(savedCard) : 0;
+        // Ensure sessionStorage is only accessed in the browser
+        if (typeof window !== 'undefined') {
+            const savedCard = sessionStorage.getItem("selectedCard");
+            return savedCard ? parseInt(savedCard) : 0;
+        }
+        return 0; // Default fallback for server-side rendering
     });
 
     const [activeTags, setActiveTags] = useState(projects[selectedCard].tags);
@@ -90,7 +94,9 @@ const RecentProjectPage = () => {
 
     const handleCardClick = (index) => {
         setSelectedCard(index);
-        sessionStorage.setItem("selectedCard", index);
+        if (typeof window !== 'undefined') {
+            sessionStorage.setItem("selectedCard", index);
+        }
     };
 
     useEffect(() => {
