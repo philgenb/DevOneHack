@@ -20,7 +20,7 @@ export default function ProjectCard({
     };
 
     return (
-        <div className={`flex flex-col gap-6 ${classname}`}>
+        <div className={`flex flex-col shrink-1 gap-6 ${classname}`}>
             <motion.div
                 initial={'hidden'}
                 animate={'visible'}

@@ -28,7 +28,7 @@ const RecentProjectPage = () => {
             title: "VisitorInsights",
             path: "visitorinsights",
             description: "Accessible Web application to visualize predictive visitor information. Built with React and Flask.",
-            tags: ["Accessibility", "ML", "Explainability", "Web"],
+            tags: ["Python", "JavaScript", "API", "ML"],
             lowerTags: ["Web", "Accessibility", "Machine Learning"],
             technologies: [
                 <TechnologyCard imgPath="/html_icon.svg" bgColor="#DFE6FC"/>,
@@ -137,8 +137,9 @@ const RecentProjectPage = () => {
 
     return (
         <div id="recentProjects" className="flex flex-col h-fit sm:h-screen w-full px-0 md:px-8 py-28 transition-all">
-            <div className="flex flex-col gap-6 items-start mx-auto sm:items-end xl:items-start transition-all sm:max-w-fit">
-                <ProjectTagSection
+            <div className="flex flex-col gap-6 items-start w-full sm:items-end xl:items-start transition-all">
+
+            <ProjectTagSection
                     className="hidden sm:flex transition-all self-end"
                     tags={activeTags}
                     activeTags={activeTags}

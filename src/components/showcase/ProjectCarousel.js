@@ -9,24 +9,35 @@ const ProjectCarousel = ({
                              currentPage,
                              setCurrentPage,
                              selectedCard,
-                             setSelectedCard, // NEU: wird von außen gesetzt
+                             setSelectedCard,
                              handleCardClick
                          }) => {
     const [projectsPerPage, setProjectsPerPage] = useState(4);
 
+
     useEffect(() => {
         const updateProjectsPerPage = () => {
             const width = window.innerWidth;
-            if (width < 640) setProjectsPerPage(1); // mobile
-            else if (width < 768) setProjectsPerPage(2); // tablet
-            else if (width < 1024) setProjectsPerPage(3); // laptop
-            else setProjectsPerPage(4); // desktop
+            if (width < 850) setProjectsPerPage(1);
+            else if (width < 1200) setProjectsPerPage(2);
+            else if (width < 1460) setProjectsPerPage(3);
+            else setProjectsPerPage(4);
         };
 
         updateProjectsPerPage();
         window.addEventListener("resize", updateProjectsPerPage);
         return () => window.removeEventListener("resize", updateProjectsPerPage);
     }, []);
+
+    useEffect(() => {
+        const startIdx = currentPage * projectsPerPage;
+        const endIdx = startIdx + projectsPerPage;
+
+        if (selectedCard < startIdx || selectedCard >= endIdx) {
+            setSelectedCard(endIdx - 1); // Autoselect last visible project
+        }
+    }, [projectsPerPage, currentPage, selectedCard]);
+
 
     const maxPage = Math.ceil(projects.length / projectsPerPage) - 1;
     const startIdx = currentPage * projectsPerPage;
@@ -45,21 +56,21 @@ const ProjectCarousel = ({
     };
 
     return (
-        <div className="w-full flex items-center justify-center gap-4 md:gap-8 min-h-[28rem]">
+        <div className="flex w-full items-start justify-center gap-4 md:gap-8 min-h-[28rem]">
             {/* Left Button */}
-            <div className="flex items-center">
+            <div className="flex mt-48 items-center transition-all transition-1000">
                 <button
                     type="button"
                     onClick={handlePrev}
                     disabled={currentPage === 0}
-                    className="p-3 bg-white shadow-xl rounded-xl hover:scale-110 transition disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="p-3 bg-white shadow-xl rounded-xl hover:scale-110 transition-all duration-700 ease-in-out disabled:opacity-30 disabled:cursor-not-allowed"
                 >
                     <ProjectLeftIcon />
                 </button>
             </div>
 
             {/* Project Cards */}
-            <div className="flex justify-center items-start gap-6 sm:gap-4 md:gap-6 xl:gap-12 2xl:gap-16 flex-1 transition-all">
+            <div className="flex justify-center items-start gap-6 sm:gap-4 md:gap-8 xl:gap-12 2xl:gap-16 3xl:gap-16 flex-1 transition-all">
                 {visibleProjects.map((project, index) => {
                     const realIndex = startIdx + index;
                     return (
@@ -83,7 +94,7 @@ const ProjectCarousel = ({
             </div>
 
             {/* Right Button */}
-            <div className="flex items-center">
+            <div className="flex mt-48 items-center transition-all transition-400">
                 <button
                     type="button"
                     onClick={handleNext}
