@@ -55,10 +55,10 @@ export default function ContactPage() {
                     />
                 </div>
                 <div className="flex gap-8">
-                    <Button endContent={<img src="/message_icon.svg" color="white"/>} color='secondary' className="px-8 gap-4 py-6 w-[200px] max-w-1/2 text-white font-black font-satoshi text-md hover:bg-buttonHover">
+                    <Button endContent={<img src="/message_icon.svg" color="white"/>} color='secondary' onClick={() => router.push("/")} className="px-8 gap-4 py-6 w-[200px] max-w-1/2 text-white font-black font-satoshi text-md hover:bg-buttonHover">
                         Send Message
                     </Button>
-                    <Button className="px-10 gap-4 py-6 max-w-1/2 text-black font-black font-satoshi text-md hover:bg-gray-100 bg-gray-300" onClick={() => router.back()}>Cancel</Button>
+                    <Button className="px-10 gap-4 py-6 max-w-1/2 text-black font-black font-satoshi text-md hover:bg-gray-100 bg-gray-300" onClick={() => router.push("/")}>Cancel</Button>
                 </div>
 
             </div>

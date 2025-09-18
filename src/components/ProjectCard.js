@@ -26,7 +26,7 @@ export default function ProjectCard({
                 animate={'visible'}
                 transition={{ duration: 0.3, delay: animationDelay}}
                 variants={appearVariant}
-                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} hover:bg-cardSelected aspect-square p-2 max-w-[250px] rounded-3xl transition-all delay-50`}
+                className={`${isSelected ? 'bg-cardSelected' : 'bg-cardUnselected'} hover:bg-cardSelected aspect-square p-2.5 max-w-[250px] rounded-3xl transition-all delay-50`}
                 onClick={onClick}
             >
                 <div className="flex w-full h-full overflow-hidden items-center justify-center">
@@ -44,7 +44,7 @@ export default function ProjectCard({
                             <h2 className="text-xl font-black">{title}</h2>
                         </AppearAnimator>
                         <AppearAnimator delay="0.4">
-                            <p className="text-medium font-medium text-projectDescription">{description}</p>
+                            <p className="text-medium font-medium w-full text-projectDescription">{description}</p>
                         </AppearAnimator>
                     </div>
                     <AppearAnimator delay="0.5">
@@ -63,7 +63,7 @@ function TagRow({tags = []}) {
         <div className="flex flex-row gap-3">
             {tags.map((tag, index) => {
                 return (
-                    <p key={index} className="font-satoshi text-sm font-bold text-projectTag">{tag}</p>
+                    <p key={index} className="text-sm font-bold text-projectTag">{tag}</p>
                 )
             })}
         </div>
