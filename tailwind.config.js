@@ -16,7 +16,7 @@ module.exports = {
       },
       colors: {
         subtitle: '#7C7C7C',
-        buttonHover: '#E9C8EF',
+        buttonHover: '#C26DE0',
         nav: '#252525',
         cardUnselected: '#F6F6F6',
         cardSelected: '#ECECEC',
