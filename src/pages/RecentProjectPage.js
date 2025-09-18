@@ -46,6 +46,7 @@ const RecentProjectPage = () => {
                     classname="row-start-2 row-span-2"
                     onClick={() => handleCardClick(1)}
                     isSelected={selectedCard === 1}
+                    onMouseEnter={() => console.log("test")}
                     animationDelay={0.2}
                 />
                 <ProjectCard
