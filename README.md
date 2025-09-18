@@ -28,7 +28,7 @@ The goal was not only to showcase my projects and skills, but also to build a **
 
 ## Live Demo
 
-🌐 Check it out here: [https://phil.gen](https://philgen.de)
+🌐 Check it out here: [https://philgen.de](https://philgen.de)
 
 ## Getting Started (Local Development)
 
