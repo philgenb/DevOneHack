@@ -11,6 +11,9 @@ import {HtmlIcon} from "@/assets/imageComponents/technologies/HtmlIcon";
 import {GitIcon} from "@/assets/imageComponents/technologies/GitIcon";
 import {FlutterIcon} from "@/assets/imageComponents/technologies/FlutterIcon";
 import {ReactIcon} from "@/assets/imageComponents/technologies/ReactIcon";
+import {DockerIcon} from "@/assets/imageComponents/technologies/DockerIcon";
+import {FlaskIcon} from "@/assets/imageComponents/technologies/FlaskIcon";
+import {MongodbIcon} from "@/assets/imageComponents/technologies/MongodbIcon";
 
 export default function AboutMePage() {
     const [copySuccess, setCopySuccess] = useState(null);
@@ -27,29 +30,34 @@ export default function AboutMePage() {
                 <div className="flex flex-col gap-4">
                     <h2 className="text-xl font-satoshi font-black text-zinc-800">Programming</h2>
                     <div className="flex gap-10">
-                        <TechnologyCard iconComponent={<JavaIcon/>} bgColor="#F0E7FF"/>
-                        <TechnologyCard iconComponent={<PythonIcon/>} bgColor="#FFE2EA"/>
-                        <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC"/>
-                        <TechnologyCard iconComponent={<DartIcon/>} bgColor="#DFE6FC"/>
+                        <TechnologyCard iconComponent={<JavaIcon/>} bgColor="#F0E7FF" description={"Java"}/>
+                        <TechnologyCard iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>
+                        <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>
+                        <TechnologyCard iconComponent={<DartIcon/>} bgColor="#DFE6FC" description={"Dart"}/>
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
                     <h2 className="text-xl font-satoshi font-black text-zinc-800">Technologies</h2>
                     <div className="flex gap-10">
-                        <TechnologyCard iconComponent={<GitIcon/>} bgColor="#F3D8FE"/>
-                        <TechnologyCard iconComponent={<HtmlIcon/>} bgColor="#ECE1FF"/>
-                        <TechnologyCard iconComponent={<FlutterIcon/>} bgColor="#FFE8EE"/>
-                        <TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE"/>
+                        <TechnologyCard iconComponent={<GitIcon/>} bgColor="#F3D8FE" description={"Git"}/>
+                        <TechnologyCard iconComponent={<HtmlIcon/>} bgColor="#ECE1FF" description={"HTML"}/>
+                        <TechnologyCard iconComponent={<FlutterIcon/>} bgColor="#FFE8EE" description={"Flutter"}/>
+                        <TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>
+                    </div>
+                    <div className="flex gap-10 mt-2">
+                        <TechnologyCard iconComponent={<DockerIcon/>} bgColor="#DFE6FC" description={"Docker"}/>
+                        <TechnologyCard iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>
+                        <TechnologyCard iconComponent={<MongodbIcon/>} bgColor="#ECE1FF" description={"MongoDB (NoSQL)"}/>
                     </div>
                 </div>
             </div>
 
             <div className="hidden sm:flex gap-4 transition-all">
-                <h1 className="text-right font-satoshi text-4xl text-zinc-800 font-black">About<br/>Me</h1>
+                <h1 className="text-right text-3xl lg:text-4xl text-zinc-800 font-black transition-all">About<br/>Me</h1>
                 <div className="flex gap-8">
                     <div className="w-0.5 h-32 rounded-sm  bg-sectionMarker"/>
                     <div className="flex flex-col gap-6">
-                        <p className="font-satoshi max-w-[400px] text-md md:text-lg font-medium text-projectDescription mt-12">
+                        <p className="max-w-[400px] text-md md:text-lg font-medium text-projectDescription mt-12">
                             I'm Phil Gengenbach, a dedicated Computer Science student at KIT in Karlsruhe.
                             I'm eager to contribute to meaningful projects. With a solid foundation in algorithms and software engineering,
                             I'm excited to apply my skills to real-world solutions
