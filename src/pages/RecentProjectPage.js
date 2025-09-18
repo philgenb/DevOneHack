@@ -5,7 +5,7 @@ import ProjectTagSection from "@/components/ProjectTagSection";
 import { motion } from "framer-motion";
 import TechnologyCard from "@/components/TechnologyCard";
 
-const RecentProjectPage2 = () => {
+const RecentProjectPage = () => {
     const titles = ["Studyplanner Web", "Plantit", "Studyplanner Mobile", "Portfolio"];
     const paths = ["studyplannerweb", "plantit", "studyplannermobile", "portfolio"];
     const descriptions = ["A studyplanner and progress tracker for students. The application is built with React and Firebase.", "A mobile application that helps you keep track of your plants. The application is built with Flutter and Firebase.", "A studyplanner and progress tracker for students. The application is built with Flutter and Firebase.", "This portfolio website. The website is built with NextJS and TailwindCSS."];
@@ -37,7 +37,7 @@ const RecentProjectPage2 = () => {
 
     const handleCardClick = (cardId) => {
         setSelectedCard(cardId);
-        sessionStorage.setItem("selectedCard", cardId); // Store the clicked card directly
+        sessionStorage.setItem("selectedCard", cardId);
     };
 
     useEffect(() => {
@@ -45,21 +45,28 @@ const RecentProjectPage2 = () => {
     }, [selectedCard]);
 
     return (
-        <div id="recentProjects" className="flex flex-col h-fit sm:h-screen md:px-8 py-28 transition-all">
-            <div className="flex flex-col gap-6 items-start mx-auto sm:items-end xl:items-start transition-all max-w-fit">
-                {/*<div className="flex flex-col sm:flex-row lg:pl-[25%] transition-all justify-end">*/}
-                {/*    <ProjectTagSection*/}
-                {/*        className="hidden sm:flex transition-all self-end"*/}
-                {/*        tags={tags}*/}
-                {/*        activeTags={activeTags}*/}
-                {/*    />*/}
-                {/*</div>*/}
+        <div id="recentProjects" className="flex flex-col h-fit sm:h-screen w-full px-0 md:px-8 py-28 transition-all">
+            <div className="flex flex-col gap-6 items-start mx-auto sm:items-end xl:items-start transition-all sm:max-w-fit">
                 <ProjectTagSection
                     className="hidden sm:flex transition-all self-end"
                     tags={tags}
                     activeTags={activeTags}
                 />
-                <div className="flex flex-col sm:flex-row gap-12 sm:gap-4 md:gap-6 xl:gap-14 transition-all justify-center">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-6 xl:gap-14 transition-all justify-center">
+                    {/* Recent Projects for Small Devices */}
+                    <motion.div
+                        initial={'hidden'}
+                        animate={'visible'}
+                        transition={{ duration: 0.2, delay: 0.2 }}
+                        variants={appearVariant}
+                        className="flex gap-4 sm:hidden mb-6"
+                    >
+                        <div className="w-0.5 h-28 rounded-lg bg-sectionMarker"></div>
+                        <h1 className="text-4xl text-gray-900 whitespace-nowrap font-black transition-all">
+                            My recent<br/>projects
+                        </h1>
+                    </motion.div>
+
                     {tagList.map((tags, index) => (
                         <div className={`relative ${index === 1 ? 'flex' : ''}`}>
                             <ProjectCard
@@ -80,21 +87,14 @@ const RecentProjectPage2 = () => {
                                     animate={'visible'}
                                     transition={{ duration: 0.2, delay: 0.2}}
                                     variants={appearVariant}
-                                    className="absolute top-[-10rem] left-1 flex gap-4"
+                                    className="hidden absolute sm:flex top-[-10rem] left-1  gap-4"
                                 >
                                     <div className="w-0.5 h-32 rounded-lg bg-sectionMarker"></div>
-                                    <h1 className="text-4xl text-gray-900 whitespace-nowrap font-black transition-all">
+                                    <h1 className="text-3xl lg:text-4xl text-gray-900 whitespace-nowrap font-black transition-all">
                                         My recent<br />projects
                                     </h1>
                                 </motion.div>
                             )}
-                            {/*{index === 3 && (*/}
-                            {/*    <ProjectTagSection*/}
-                            {/*        className="hidden sm:flex transition-all self-end absolute right-[10rem] top-[-5rem]"*/}
-                            {/*        tags={tags}*/}
-                            {/*        activeTags={activeTags}*/}
-                            {/*    />*/}
-                            {/*)}*/}
                         </div>
                     ))}
                 </div>
@@ -103,4 +103,4 @@ const RecentProjectPage2 = () => {
     );
 };
 
-export default RecentProjectPage2;
+export default RecentProjectPage;
