@@ -15,11 +15,11 @@ export default function VisitorInsights() {
             technology="Built with Flask and React in a modular MVCS architecture, VisitorInsights uses decision-based models like Random Forest and XGBoost, achieving 85% classification accuracy for daily predictions. The interface follows WCAG standards for a barrier-free web experience."
             imageSubtitle="Making predictive visitor information accessible – powered by Flask, React, XGBoost, and SHAP."
             technologies={[
-                <TechnologyCard iconComponent={<AccessibilityIcon/>} bgColor="#ECE1FF" description={"Accessibility"} />,
-                <TechnologyCard iconComponent={<ReactIcon />} bgColor="#FFE8EE" description={"React"} />,
-                <TechnologyCard iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>,
-                <TechnologyCard iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>,
-                <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
+                <TechnologyCard key="accessibility" iconComponent={<AccessibilityIcon/>} bgColor="#ECE1FF" description={"Accessibility"} />,
+                <TechnologyCard key="react" iconComponent={<ReactIcon />} bgColor="#FFE8EE" description={"React"} />,
+                <TechnologyCard key="flask" iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>,
+                <TechnologyCard key="python" iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>,
+                <TechnologyCard key="javascript" iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
             ]}
             imgPath={"/assets/applications/VisitorInsights_Showcase.png"}
         />

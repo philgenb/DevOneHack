@@ -13,9 +13,9 @@ export default function StudyplannerWeb() {
             technology="is crafted using modern technologies, primarily React and Firebase. This combination ensures real-time synchronization of study plans and provides a responsive, cross-platform experience for students, enabling them to access their schedules anywhere, anytime."
             imageSubtitle="Elevating Study Efficiency: Efficient study planning powered by React and Firebase."
             technologies={[
-                <TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
-                <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
-                <TechnologyCard iconComponent={<HtmlIcon/>} bgColor="#ECE1FF" description={"HTML"}/>
+                <TechnologyCard key="react" iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
+                <TechnologyCard key="javascript" iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
+                <TechnologyCard key="html" iconComponent={<HtmlIcon/>} bgColor="#ECE1FF" description={"HTML"}/>
             ]}
             imgPath={"/assets/applications/Studyplanner_Webapp.png"}
         />
