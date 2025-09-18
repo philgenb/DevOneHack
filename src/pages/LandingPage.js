@@ -44,9 +44,9 @@ const LandingPage = () => {
                 initial="hidden"
                 animate="visible"
                 transition={{ duration: 0.2, delay: 0.1 }}
-                className="absolute top-[-10rem] z-10"
+                className="absolute top-[-10rem]"
             >
-                <CodeSnippetIcon />
+                <CodeSnippetIcon/>
             </motion.div>
             <motion.div
                 variants={rightVariant}
@@ -58,13 +58,13 @@ const LandingPage = () => {
                 <RightArtworkIcon/>
             </motion.div>
             <AppearAnimator downScale={true} delay={0.3}>
-                <h1 className="text-5xl sm:text-6xl font-satoshi font-black leading-tight sm:leading-tight md:text-center mb-4 relative z-20 transition-all whitespace-nowrap">
+                <h1 className="text-4xl sm:text-6xl font-satoshi font-black leading-tight sm:leading-tight md:text-center mb-4 relative z-20 transition-all whitespace-nowrap">
                     Hey, I'm Phil,<br/>A Code Enthusiast
                 </h1>
             </AppearAnimator>
             <AppearAnimator delay={0.4}>
                 <div className="flex justify-center max-w-[850px]">
-                    <h2 className="text-lg sm:text-xl leading-normal sm:leading-tight text-subtitle font-satoshi font-bold md:text-center md:whitespace-pre-wrap transition-all">
+                    <h2 className="text-sm sm:text-xl leading-normal sm:leading-tight text-subtitle font-satoshi font-bold md:text-center md:whitespace-pre-wrap transition-all">
                         Hello, I'm Phil, a code enthusiast with a passion for crafting practical software{'\n'}solutions.
                         Take a look at my portfolio, featuring projects that demonstrate my{'\n'}commitment to effective problem-solving and
                         creating seamless digital{'\n'}experiences.

@@ -34,3 +34,27 @@ body {
   font-family: 'Satoshi', sans-serif;
   @apply select-none;
 }
+
+/* For WebKit-based browsers (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Hide the scrollbar */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* Ensure scroll functionality remains */
+html, body {
+  overflow: -moz-scrollbars-none; /* Hide scrollbars for Firefox */
+  overflow: hidden;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.card-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* X=0, Y=4, Blur=10, Spread=0, Farbe=rgba(0,0,0,0.05) */
+}
