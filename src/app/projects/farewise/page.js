@@ -17,12 +17,15 @@ export default function Farewise() {
             technology="Built as a serverless application with a FastAPI backend deployed on AWS Lambda, and a React + TypeScript frontend served via S3 and CloudFront. Uses AWS CDK for infrastructure as code, DynamoDB for persistent data storage, and custom scoring algorithms for flight ranking."
             imageSubtitle="Finding the best spontaneous travel deals – powered by AWS, FastAPI, and React."
             technologies={[
-                <TechnologyCard iconComponent={<AmazonWebServicesIcon/>} bgColor="#161D27" description={"Amazon Web Services (AWS)"}/>,
-                <TechnologyCard iconComponent={<ReactWhiteIcon/>} bgColor="#B32DEC" description={"React"}/>,
-                <TechnologyCard iconComponent={<TypescriptIcon/>} bgColor="#5D65FF" description={"TypeScript"} />,
-                <TechnologyCard iconComponent={<PythonWhiteIcon/>} bgColor="#7B49D3" description={"Python"}/>,
-                <TechnologyCard iconComponent={<LambdaIcon/>} bgColor="#FF9900" description={"AWS Lambda"}/>,
-                <TechnologyCard iconComponent={<DynamoDBIcon/>} bgColor="#527FFF" description={"AWS DynamoDB"}/>,
+                <TechnologyCard key="aws" iconComponent={<AmazonWebServicesIcon/>} bgColor="#161D27"
+                                description="Amazon Web Services (AWS)"/>,
+                <TechnologyCard key="react" iconComponent={<ReactWhiteIcon/>} bgColor="#B32DEC" description="React"/>,
+                <TechnologyCard key="ts" iconComponent={<TypescriptIcon/>} bgColor="#5D65FF" description="TypeScript"/>,
+                <TechnologyCard key="python" iconComponent={<PythonWhiteIcon/>} bgColor="#7B49D3"
+                                description="Python"/>,
+                <TechnologyCard key="lambda" iconComponent={<LambdaIcon/>} bgColor="#FF9900" description="AWS Lambda"/>,
+                <TechnologyCard key="dynamodb" iconComponent={<DynamoDBIcon/>} bgColor="#527FFF"
+                                description="AWS DynamoDB"/>,
             ]}
             imgPath={"/assets/applications/Farewise_Showcase_Shadow.png"}
             websiteLink={"https://farewise.de"}

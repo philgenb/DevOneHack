@@ -17,12 +17,12 @@ export default function Clockwise() {
             technology="Built with React for the frontend and Python Flask for the backend, the app leverages MongoDB for data storage and Docker for containerization. This modern stack ensures a responsive, scalable, and reliable solution for time tracking."
             imageSubtitle="Effortless time tracking for research assistants, reducing administrative workload and streamlining employee management."
             technologies={[
-                <TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
-                <TechnologyCard iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>,
-                <TechnologyCard iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>,
-                <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
-                <TechnologyCard iconComponent={<MongodbIcon/>} bgColor="#ECE1FF" description={"MongoDB (NoSQL)"}/>,
-                <TechnologyCard iconComponent={<DockerIcon/>} bgColor="#DFE6FC" description={"Docker"}/>
+                <TechnologyCard key="react" iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
+                <TechnologyCard key="flask" iconComponent={<FlaskIcon/>} bgColor="#F3D8FE" description={"Flask"}/>,
+                <TechnologyCard key="python" iconComponent={<PythonIcon/>} bgColor="#FFE2EA" description={"Python"}/>,
+                <TechnologyCard key="javascript" iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
+                <TechnologyCard key="mongodb" iconComponent={<MongodbIcon/>} bgColor="#ECE1FF" description={"MongoDB (NoSQL)"}/>,
+                <TechnologyCard key="docker" iconComponent={<DockerIcon/>} bgColor="#DFE6FC" description={"Docker"}/>
             ]}
             githubLink={"https://github.com/intuitive-robots/pse-ss24-timetrack"}
             // imgComponent={<ClockwiseScreen/>}

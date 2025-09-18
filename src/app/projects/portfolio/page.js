@@ -14,10 +14,10 @@ export default function Portfolio() {
             technology="Built with Next.js, React, CSS, and HTML, the Portfolio Page delivers a modern, interactive platform."
             imageSubtitle="Exploring Digital Creations: A Portfolio Highlighting Projects. Built with Next.js, React and Javascript"
             technologies={[
-                <TechnologyCard iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
-                <TechnologyCard iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
-                <TechnologyCard iconComponent={<HtmlIcon/>} bgColor="#ECE1FF" description={"HTML"}/>,
-                <TechnologyCard iconComponent={<GitIcon/>} bgColor="#F3D8FE" description={"Git"}/>
+                <TechnologyCard key="react" iconComponent={<ReactIcon/>} bgColor="#FFE8EE" description={"React"}/>,
+                <TechnologyCard key="javascript" iconComponent={<JavascriptIcon/>} bgColor="#DFE6FC" description={"Javascript"}/>,
+                <TechnologyCard key="html" iconComponent={<HtmlIcon/>} bgColor="#ECE1FF" description={"HTML"}/>,
+                <TechnologyCard key="git" iconComponent={<GitIcon/>} bgColor="#F3D8FE" description={"Git"}/>
             ]}
             imgPath={"/assets/applications/Portfolio_Home.png"}
         />
