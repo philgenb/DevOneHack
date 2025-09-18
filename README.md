@@ -1,53 +1,69 @@
-# Phil Gengenbach's Portfolio
+# Phil Gengenbach's Portfolio – DevOne Hack 2025 Submission
 
-This is a portfolio showcasing some of my projects as a software developer. It is built with **Next.js**, **JavaScript**, and **Framer Motion**. The project is hosted on a virtual server using **nginx** as a reverse proxy with **Cloudflare** for SSL and security enhancements.
+This portfolio was created as part of the **DevOne Hack 2025**, a hackathon focused on building modern, personal, and interactive developer portfolios.  
+
+The goal was not only to showcase my projects and skills, but also to build a **future-ready digital identity** with smooth animations, responsive design, and a custom deployment setup.
+
+## Hackathon Context
+
+- **Event:** DevOne Hack 2025 – *Build Your Developer Portfolio*
+- **Theme:** Empowering developers to present their skills and style through interactive websites
+- **Focus of my project:** A clean, responsive portfolio with engaging animations and a self-hosted infrastructure setup
 
 ## Technologies Used
 
-- **Next.js**: React-based framework for server-side rendering and static websites.
-- **JavaScript**: Main programming language used in the project.
-- **Framer Motion**: Library for animations and visual transitions.
-- **nginx**: Web server used as a reverse proxy.
-- **Cloudflare**: Used for SSL and performance/security improvements.
+- **Next.js**: React-based framework for building interactive, fast websites
+- **JavaScript**: Core programming language of the project
+- **Framer Motion**: Library for smooth animations and transitions
+- **nginx**: Reverse proxy for reliable server setup
+- **Cloudflare**: SSL, security, and performance optimization
+
+## Features
+
+- Animated hero section with typing effects
+- Project cards with hover animations and GitHub/Live links
+- Interactive skills section with badges and icons
+- Fully responsive design (desktop, tablet, mobile)
+- Custom hosting setup with nginx + Cloudflare
 
 ## Live Demo
 
-The portfolio is live and accessible at: [https://phil.gen](https://phil.gen)
+🌐 Check it out here: [https://phil.gen](https://phil.gen)
 
-## Getting Started
-
-To run this project locally, follow these steps:
+## Getting Started (Local Development)
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repository-url.git
-    ```
+   git clone https://github.com/philgenb/DevOneHack.git
+   ```
 2. Navigate to the project directory:
-    ```bash
-    cd portfolio
-    ```
+   ```bash
+   cd portfolio
+   ```
 3. Install dependencies:
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 4. Run the development server:
-    ```bash
-    npm run dev
-    ```
-5. Open http://localhost:3000 in your browser to see the result.
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Deployment
-The project is deployed on a virtual server and uses nginx as a reverse proxy along with Cloudflare for SSL and security features. To deploy the project, follow these steps:
-1. Build the project for production:
-    ```bash
-    npm run build
-    ```
-2. Start the application in production mode:
-    ```bash
-    npm start
-    ```
 
-### Nginx Configuration Example
+The project is deployed on a virtual server and uses **nginx** as a reverse proxy, with **Cloudflare** providing SSL and extra security.  
+
+1. Build the project for production:
+   ```bash
+   npm run build
+   ```
+2. Start the application:
+   ```bash
+   npm start
+   ```
+
+### Example Nginx Configuration
 
 ```nginx
 server {
@@ -66,9 +82,12 @@ server {
 ```
 
 ## Learn More
-To learn more about the technologies used, check out the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [Framer Motion Documentation](https://www.framer.com/motion/) - Learn about animations with Framer Motion.
-- [Cloudflare Documentation](https://developers.cloudflare.com/) - Learn about Cloudflare services.
-- [nginx Documentation](https://nginx.org/en/docs/) - Learn about nginx configuration and features.
+- [Next.js Documentation](https://nextjs.org/docs)  
+- [Framer Motion Documentation](https://www.framer.com/motion/)  
+- [Cloudflare Documentation](https://developers.cloudflare.com/)  
+- [nginx Documentation](https://nginx.org/en/docs/)  
+
+---
+
+📌 *Built with ❤️ for DevOne Hack 2025 – showcasing my projects, skills, and digital identity as a developer.*
