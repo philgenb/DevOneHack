@@ -35,6 +35,7 @@ body {
   @apply select-none;
 }
 
+
 /* For WebKit-based browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {
   width: 0;

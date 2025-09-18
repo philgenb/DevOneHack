@@ -59,7 +59,7 @@ const LandingPage = () => {
             </motion.div>
             <AppearAnimator downScale={true} delay={0.3}>
                 <h1 className="text-4xl sm:text-6xl font-satoshi font-black leading-tight sm:leading-tight md:text-center mb-4 relative z-20 transition-all whitespace-nowrap">
-                    Hey, I'm Phil,<br/>A Code Enthusiast
+                    Hey, I’m Phil,<br/>A Code Enthusiast
                 </h1>
             </AppearAnimator>
             <AppearAnimator delay={0.4}>
