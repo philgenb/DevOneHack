@@ -27,6 +27,13 @@
 /*    rgb(var(--background-start-rgb));*/
 /*}*/
 
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 body {
   color: #000; /* Schwarzer Text */
   background-color: #fff; /* Weißer Hintergrund */
