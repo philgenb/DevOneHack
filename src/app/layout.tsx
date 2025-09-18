@@ -1,14 +1,5 @@
 import './globals.css'
 import { Providers } from './providers'
-import localFont from 'next/font/local';
-
-const satoshi = localFont({
-  src: [{ path: '../../public/fonts/Satoshi-Variable.ttf', style: 'normal' }],
-  display: 'swap',
-  variable: '--font-satoshi',
-});
-
-
 
 export const metadata = {
   title: 'Phil G. | Portfolio',
@@ -17,7 +8,13 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${satoshi.className} light`}>
+    <html lang="en" className="light">
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>
