@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import LandingPage from "../pages/landingPage.js";
 import Navbar from "../components/Navbar.js";
-import AboutMePage from "../pages/AboutMePage";
 import RecentProjectPage from "@/pages/RecentProjectPage";
+import LandingPage from "@/pages/LandingPage";
+import AboutMePage from "@/pages/AboutMePage";
 
 export default function Home() {
   return (
