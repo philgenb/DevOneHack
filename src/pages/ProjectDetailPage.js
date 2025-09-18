@@ -2,6 +2,7 @@
 'use client'
 import {motion} from "framer-motion";
 import {GithubIcon} from "@/assets/imageComponents/GithubIcon";
+import BackButton from "@/components/input/BackButton";
 
 
 export default function ProjectDetailPage(
@@ -110,6 +111,10 @@ export default function ProjectDetailPage(
                         <GithubIcon/>
                     </a>
                 )}
+
+                <div className="absolute left-[5%] top-[5%] hidden xl:flex">
+                    <BackButton/>
+                </div>
             </div>
         </div>
 

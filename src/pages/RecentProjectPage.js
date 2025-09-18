@@ -102,7 +102,7 @@ const RecentProjectPage = () => {
                     tags={activeTags}
                     activeTags={activeTags}
                 />
-                <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-6 xl:gap-14 transition-all justify-center">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-4 md:gap-6 xl:gap-12 2xl:gap-16 transition-all justify-center">
                     {/* Recent Projects for Small Devices */}
                     <motion.div
                         initial={'hidden'}

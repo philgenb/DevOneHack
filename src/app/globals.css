@@ -54,3 +54,7 @@ html, body {
   overflow: hidden;
   overflow-y: auto; /* Enable vertical scrolling */
 }
+
+.card-shadow {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* X=0, Y=4, Blur=10, Spread=0, Farbe=rgba(0,0,0,0.05) */
+}
