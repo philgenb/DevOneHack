@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const ClockwiseScreen = () => (
-    <svg width="1470" height="1054" viewBox="0 0 1470 1054" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="776" height="556" viewBox="0 0 1470 1054" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="mask0_246_235" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="15" y="14" width="1440" height="1024">
             <path d="M1424 14H46C28.8792 14 15 27.8792 15 45V1007C15 1024.12 28.8792 1038 46 1038H1424C1441.12 1038 1455 1024.12 1455 1007V45C1455 27.8792 1441.12 14 1424 14Z" fill="white"/>
         </mask>

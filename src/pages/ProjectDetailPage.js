@@ -1,8 +1,8 @@
 
 'use client'
 import {motion} from "framer-motion";
-import TechnologyCard from "@/components/TechnologyCard";
 import {GithubIcon} from "@/assets/imageComponents/GithubIcon";
+
 
 export default function ProjectDetailPage(
     {
@@ -21,43 +21,36 @@ export default function ProjectDetailPage(
     const gapClass = technologyCount > 4 ? "gap-6" : "gap-10";
 
     return (
-        <div className="flex flex-col sm:flex-row px-8 md:px-12 xl:px-28 2xl:px-44 py-28 gap-8 transition-all duration-75 relative">
-            <div className="flex flex-col gap-14 w-[25rem] text-right">
+        <div className="flex flex-col-reverse md:flex-row px-8 md:px-12 xl:pl-16 2xl:px-36 py-20 gap-8 transition-all duration-75 relative">
+            <div className="flex flex-col gap-14 w-[25rem] text-right transition-all duration-500 ease-in-out">
                 <motion.div
-                    className="flex flex-col gap-1"
+                    className="flex flex-col gap-1 min-w-[350px] w-[400px] self-end"
                     initial={{opacity: 0, x: "-10%"}}
                     animate={{opacity: 1, x: "0%"}}
                     transition={{duration: 0.3, delay: 0.1}}
                 >
-                    <h2 className="font-black text-lg">IDEA</h2>
-                    <p className="lg:text-md font-medium text-projectDescription">{idea}</p>
+                    <h2 className="font-black text-medium lg:text-lg text-zinc-800">IDEA</h2>
+                    <p className="text-sm lg:text-medium font-medium text-projectDescription w-full">{idea}</p>
                 </motion.div>
                 <motion.div
-                    className="flex flex-col gap-1"
+                    className="flex flex-col gap-1 min-w-[350px] w-[400px] self-end"
                     initial={{opacity: 0, x: "-20%"}}
                     animate={{opacity: 1, x: "0%"}}
                     transition={{duration: 0.3, delay: 0.2}}
                 >
-                    <h2 className="font-black text-lg text-zinc-800">USER EXPERIENCE</h2>
-                    <p className="lg:text-md font-medium text-projectDescription">{userexperience}</p>
+                    <h2 className="font-black text-medium lg:text-lg text-zinc-800">USER EXPERIENCE</h2>
+                    <p className="text-sm lg:text-medium font-medium text-projectDescription">{userexperience}</p>
                 </motion.div>
                 <motion.div
-                    className="flex flex-col gap-1"
+                    className="flex flex-col gap-1 w-[400px] self-end"
                     initial={{opacity: 0, x: "-30%"}}
                     animate={{opacity: 1, x: "0%"}}
                     transition={{duration: 0.3, delay: 0.3}}
                 >
-                    <h2 className="font-black text-lg text-zinc-800">TECHNOLOGY</h2>
-                    <p className=" text-md font-medium text-projectDescription">{technology}</p>
+                    <h2 className="font-black text-medium lg:text-lg text-zinc-800">TECHNOLOGY</h2>
+                    <p className="text-sm lg:text-medium font-medium text-projectDescription">{technology}</p>
                 </motion.div>
             </div>
-
-            <motion.div
-                initial={{opacity: 0, y: "-10%"}}
-                animate={{opacity: 1, y: "0%"}}
-                transition={{duration: 0.3, delay: 0}}
-                className="ml-3 w-0.5 h-28 bg-[#D3D3D3] rounded-full"
-            />
             <div className="flex flex-col gap-8">
                 <motion.div
                     initial={{opacity: 0,}}
@@ -65,24 +58,38 @@ export default function ProjectDetailPage(
                     transition={{duration: 0.4, delay: 0.1}}
                     className="flex justify-between items-center"
                 >
-                    <h1 className=" h-fit font-black text-zinc-800 text-4xl break-words w-[155px]">{title}</h1>
-                    <div className={`flex ${gapClass}`}>
+                    <div className="relative flex gap-6">
+                        <div className="absolute left-0 w-0.5 h-28 bg-[#D3D3D3] rounded-full"/>
+                        <h1 className="ml-6 h-fit font-black text-zinc-800 text-3xl lg:text-4xl break-words max-w-[12rem] transition-all">{title}</h1>
+                    </div>
+                    <div className={`ml-6 hidden lg:flex ${gapClass}`}>
                         {technologies}
                     </div>
                 </motion.div>
-                <motion.img
-                    initial={{opacity: 0, x: "10%"}}
-                    animate={{opacity: 1, x: "0%"}}
-                    transition={{duration: 0.3, delay: 0}}
-                    src={imgPath}
-                    alt="Project_Image"
-                    className="ml-3"
-                />
+                {imgComponent ? (
+                    <motion.div
+                        initial={{opacity: 0, x: "10%"}}
+                        animate={{opacity: 1, x: "0%"}}
+                        transition={{duration: 0.3, delay: 0}}
+                        className="ml-3"
+                    >
+                        {imgComponent}
+                    </motion.div>
+                ) : (
+                    <motion.img
+                        initial={{opacity: 0, x: "10%"}}
+                        animate={{opacity: 1, x: "0%"}}
+                        transition={{duration: 0.3, delay: 0}}
+                        src={imgPath}
+                        alt="Project_Image"
+                        className="ml-6 max-w-[50rem] w-full"
+                    />
+                )}
                 <motion.p
                     initial={{opacity: 0}}
                     animate={{opacity: 1}}
                     transition={{duration: 0.4, delay: 0.4}}
-                    className="self-endmax-w-[400px] text-right text-zinc-400 font-medium text-[15px]"
+                    className="self-end max-w-[50rem] text-right text-zinc-400 font-medium text-[15px]"
                 >{imageSubtitle}</motion.p>
             </div>
 
