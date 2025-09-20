@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Phil Gengenbach's Portfolio – DevOne Hack 2025 Submission
 
-## Getting Started
+This portfolio was created as part of the **DevOne Hack 2025**, a hackathon focused on building modern, personal, and interactive developer portfolios.  
 
-First, run the development server:
+The goal was not only to showcase my projects and skills, but also to build a **future-ready digital identity** with smooth animations, responsive design, and a custom deployment setup.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Hackathon Context
+
+- **Event:** DevOne Hack 2025 – *Build Your Developer Portfolio*
+- **Theme:** Empowering developers to present their skills and style through interactive websites
+- **Focus of my project:** A clean, responsive portfolio with engaging animations and a self-hosted infrastructure setup
+
+## Technologies Used
+
+- **Next.js**: React-based framework for building interactive, fast websites
+- **JavaScript**: Core programming language of the project
+- **Framer Motion**: Library for smooth animations and transitions
+- **nginx**: Reverse proxy for reliable server setup
+- **Cloudflare**: SSL, security, and performance optimization
+
+## Features
+
+- Animated hero section with typing effects
+- Project cards with hover animations and GitHub/Live links
+- Interactive skills section with badges and icons
+- Fully responsive design (desktop, tablet, mobile)
+- Custom hosting setup with nginx + Cloudflare
+
+## Live Demo
+
+🌐 Check it out here: [https://philgen.de](https://philgen.de)
+
+## Getting Started (Local Development)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/philgenb/DevOneHack.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+The project is deployed on a virtual server and uses **nginx** as a reverse proxy, with **Cloudflare** providing SSL and extra security.  
+
+1. Build the project for production:
+   ```bash
+   npm run build
+   ```
+2. Start the application:
+   ```bash
+   npm start
+   ```
+
+### Example Nginx Configuration
+
+```nginx
+server {
+    listen 80;
+    server_name phil.gen www.phil.gen;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)  
+- [Framer Motion Documentation](https://www.framer.com/motion/)  
+- [Cloudflare Documentation](https://developers.cloudflare.com/)  
+- [nginx Documentation](https://nginx.org/en/docs/)  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+📌 *Built with ❤️ for DevOne Hack 2025 – showcasing my projects, skills, and digital identity as a developer.*
